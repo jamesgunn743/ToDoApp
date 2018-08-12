@@ -1,0 +1,6 @@
+/node_modules
+/artifacts
+.expo/packager-info.json
+.vs/
+coverage/
+.nyc_output/

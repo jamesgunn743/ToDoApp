@@ -1,0 +1,78 @@
+[
+    {
+        "key": "contentContainer0",
+        "component": "ContentContainer",
+        "style": {},
+        "image": "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-1/p320x320/17353392_10155274393145832_5675789457773365768_n.jpg?_nc_cat=0&oh=c22460e3c92b403100e56263ab51c9ad&oe=5BDF4602",
+        "componentChildren": [
+            {
+                "key": "textComponent0",
+                "component": "TextComponent",
+                "style": {
+                    "color": "#fff"
+                },
+                "font": "System",
+                "textSize": 50,
+                "text": "Angus is cool",
+                "fontWeight": "bold"
+            },
+            {
+                "key": "textInputComponent0",
+                "component": "TextInputComponent",
+                "style": {
+                    "color": "#fff"
+                },
+                "placeholder": "Input Text Here",
+                "placeholderTextColor": "orange"
+            },
+            {
+                "key": "MapViewComponent0",
+                "component": "MapViewComponent",
+                "style": {
+                    "flex": 1
+                },
+                "initialRegion": {
+                    "latitude": 55.86144,
+                    "longitude": -3.70702,
+                    "latitudeDelta": 0.0922,
+                    "longitudeDelta": 0.0421
+                }
+            },
+            {
+                "key": "imageComponent0",
+                "component": "Image",
+                "style": {
+                    "height": 100,
+                    "width": 100,
+                    "alignSelf": "center"
+                },
+                "image": "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-1/p320x320/17353392_10155274393145832_5675789457773365768_n.jpg?_nc_cat=0&oh=c22460e3c92b403100e56263ab51c9ad&oe=5BDF4602"
+            },
+            {
+                "key": "CameraComponent0",
+                "component": "CameraComponent",
+                "showFlipButton": false,
+                "cameraFacing": 1
+            },
+            {
+                "key": "textComponent1",
+                "component": "TextComponent",
+                "style": {
+                    "color": "#fff",
+                    "backgroundColor": "blue",
+                    "padding": 10,
+                    "paddingBottom": 10,
+                    "width": 200,
+                    "alignSelf": "center",
+                    "textAlign": "center"
+                },
+                "font": "System",
+                "textSize": 20,
+                "text": "Go To Website",
+                "fontWeight": "bold",
+                "buttonType": "WebLink",
+                "buttonData": "https://www.facebook.com/Ravendarksky?ref=br_rs"
+            }
+        ]
+    }
+]

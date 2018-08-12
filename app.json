@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "sdkVersion": "27.0.0",
+    "name": "dreamweaver",
+    "description": "the new mobile app",
+    "slug": "dreamweaver",
+    "privacy": "unlisted",
+    "version": "1.0.0",
+    "primaryColor": "#cccccc",
+    "icon": "./assets/images/logo.png",
+    "loading": {
+      "icon": "./assets/images/logo.png",
+      "hideExponentText": false
+    },
+    "packagerOpts": {
+      "assetExts": [
+        "ttf",
+        "mp4"
+      ]
+    },
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "ios": {
+      "supportsTablet": false
+    },
+    "android": {
+      "package": "com.dreamweaver"
+    },
+    "androidStatusBar": {}
+  }
+}

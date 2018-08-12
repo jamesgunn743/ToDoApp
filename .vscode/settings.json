@@ -1,0 +1,71 @@
+{
+    "workbench.colorTheme": "Monokai",
+    "editor.wordWrap": "on",
+    "git.enableSmartCommit": true,
+    "editor.renderWhitespace": "all",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": true,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": true,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": true,
+        "suppressWelcomeNotice": true
+    },
+    "git.autofetch": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    },
+    "editor.snippetSuggestions": "none",
+    "tslint.alwaysShowStatus": true,
+    "workbench.iconTheme": "vscode-icons",
+    "gitlens.keymap": "none",
+    "todo-tree.ripgrep": "/Applications/Visual Studio Code.app/Contents/Resources/app/node_modules.asar.unpacked/vscode-ripgrep/bin/rg",
+    "workbench.sideBar.location": "left",
+    "vsicons.dontShowNewVersionMessage": true,
+    "team.showWelcomeMessage": false,
+    "gitlens.historyExplorer.enabled": true,
+    "[javascriptreact]": {
+        
+    },
+    "files.associations": {
+        "*.js": "javascriptreact"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "cSpell.language": "en,en-GB",
+    "cSpell.userWords": [
+        "backend"
+    ],
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "go",
+        "handlebars",
+        "html",
+        "jade",
+        "json",
+        "latex",
+        "less",
+        "markdown",
+        "php",
+        "plaintext",
+        "python",
+        "pub",
+        "restructuredtext",
+        "rust",
+        "scss",
+        "text",
+        "yml"
+    ],
+    "typescript.reportStyleChecksAsWarnings": true
+}
