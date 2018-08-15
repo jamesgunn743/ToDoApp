@@ -6,7 +6,6 @@ import { Playground } from './playground/playground.component';
 import { View } from 'react-native';
 import { NavigatorService } from './services/navigation.service';
 
-
 export const AppNavigator = StackNavigator(
     {
         playground: { screen: Playground },

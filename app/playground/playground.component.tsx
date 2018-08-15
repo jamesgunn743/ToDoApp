@@ -2,75 +2,59 @@ import { observer } from 'mobx-react';
 import * as React from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native'
 import { Constants } from 'expo';
-import { CheckBox, List, ListItem, Button, } from 'native-base';
+import { Button, } from 'native-base';
+// import { DeleteButton } from '../components/delete.button';
+import { observable } from 'mobx';
 
-const settings = require('../../assets/appbuildersettings.json');
 
 
 export interface PlaygroundProps {
 }
 
-@observer export class Playground extends React.Component<PlaygroundProps, any> {
-
-    ref;
-    _handleTextChangeRefrence: any;
-    _handleSendButtonPressRefrence: any;
+@observer export class Playground extends React.Component<PlaygroundProps, {}> {
 
 
+    @observable checkBox: boolean = true;
+
+    @observable inputValue: string;
+
+    @observable toDoListData: any;
+
+    @observable _handleSendButtonPressRefrence: string;
+
+    @observable _handleTextChangeRefrence: string;
 
 
     constructor(props) {
         super(props);
 
-        this.state = {
-            design: settings,
-            inputValue: '',
-            toDoListData: [],
-            checkBox: true,
-        };
 
-        this._handleTextChangeRefrence = this._handleTextChange.bind(this);
-        this._handleSendButtonPressRefrence = this._handleSendButtonPress.bind(this);
+
+        this._handleTextChange = this._handleTextChange.bind(this);
+        this._handleSendButtonPress = this._handleSendButtonPress.bind(this);
     }
 
     _handleTextChange = (value) => {
-        const inputValue = value;
-        this.setState(() => ({
-            inputValue,
-        }))
+        this.inputValue = value;
+
     };
 
     _handleSendButtonPress = () => {
-        if (!this.state.inputValue) {
+        if (!this.inputValue) {
             return;
         }
-        let stuffGetEdit = this.state.toDoListData;
+        let stuffGetEdit = this.toDoListData;
 
         let newData = {
-            textContent: this.state.inputValue,
+            textContent: this.inputValue,
         };
 
-        stuffGetEdit.push(newData);
-        this.setState(() => ({
-            toDoListData: stuffGetEdit,
-            inputValue: '',
-        }));
+        //  stuffGetEdit.push(newData);
+
+        this.toDoListData = stuffGetEdit;
+        this.inputValue = '';
+
     };
-
-    componentDidMount() {
-
-    }
-
-    updateDesign(data) {
-        console.log('receiving update design', data);
-
-        // Text
-        this.setState({
-            design: data
-
-        });
-        //      ComponentService.updateComponent(data.key, data);
-    }
 
 
     render() {
@@ -79,39 +63,25 @@ export interface PlaygroundProps {
                 <View style={styles.formView}>
                     <TextInput
                         style={styles.inputForm}
-                        value={this.state.inputValue}
-                        onChangeText={this._handleTextChangeRefrence}
+                        value={this.inputValue}
+                        //     onChangeText={this._handleTextChangeRefrence}
                         placeholder="Input todo"
                     />
                     <Button bordered light
-                        onPress={this._handleSendButtonPressRefrence}
+                    //        onPress={this._handleSendButtonPressRefrence}
                     >
                         <Text>Add</Text>
 
                     </Button>
                 </View>
 
-                <List>
-                    {this.state.toDoListData.map((item, key) => {
+                {/* <List>
+                    {this.toDoListData.map((item, key) => {
                         return (<ListItem key={key} >
                             <Text>{item.textContent}</Text>
-                            <Button
-
-                                onPress={(toDoListDataItemId) => {
-
-                                    let toDoListData = this.state.toDoListData;
-                                    toDoListData.splice(toDoListDataItemId, 1);
-                                    this.setState(() => ({
-                                        toDoListData: toDoListData,
-                                    }));
-                                }
-                                }
-                            >
-
-                                <Text>Delete</Text>
-                            </Button>
-                            <CheckBox checked={this.state.checkBox} onPress={() => {
-                                const newstate = !this.state.checkBox;
+                            <DeleteButton></DeleteButton>
+                            <CheckBox checked={this.checkBox} onPress={() => {
+                                const newstate = !this.checkBox;
                                 this.setState({
                                     checkBox: newstate
                                 });
@@ -120,7 +90,7 @@ export interface PlaygroundProps {
                         </ListItem>
                         );
                     })}
-                </List>
+                </List> */}
 
             </View >
         );

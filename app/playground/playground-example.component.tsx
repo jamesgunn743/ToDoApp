@@ -30,7 +30,7 @@ export interface PlaygroundExampleProps {
     changeTextOnUI() {
         this.textToDisplay = this.textToStore; // set the varible so the ui gets updated
         this.textSizeForDisplay = 32; // sets the size of the fontsize
-        this.textStyle = { fontSize: this.textSizeForDisplay }; // tells the style to be updated
+        this.textStyle = { fontSize: this.textSizeForDisplay, }; // tells the style to be updated
     }
 
     constructor(props) {
