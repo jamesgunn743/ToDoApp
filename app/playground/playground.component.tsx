@@ -1,11 +1,12 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native'
-import { Constants } from 'expo';
+import { View, Text, } from 'react-native'
+// import { Constants } from 'expo';
 import { Button, } from 'native-base';
-// import { DeleteButton } from '../components/delete.button';
-import { observable } from 'mobx';
 
+import { observable } from 'mobx';
+import { DeleteButton } from '../components/delete.button';
+import { _TextInput } from '../components/text.Input';
 
 
 export interface PlaygroundProps {
@@ -20,9 +21,11 @@ export interface PlaygroundProps {
 
     @observable toDoListData: any;
 
-    @observable _handleSendButtonPressRefrence: string;
+    @observable _handleSendButtonPressRefrence: any;
 
     @observable _handleTextChangeRefrence: string;
+
+
 
 
     constructor(props) {
@@ -45,9 +48,9 @@ export interface PlaygroundProps {
         }
         let stuffGetEdit = this.toDoListData;
 
-        let newData = {
-            textContent: this.inputValue,
-        };
+        // let newData = {
+        //     textContent: this.inputValue,
+        // };
 
         //  stuffGetEdit.push(newData);
 
@@ -59,78 +62,64 @@ export interface PlaygroundProps {
 
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.formView}>
-                    <TextInput
-                        style={styles.inputForm}
-                        value={this.inputValue}
-                        //     onChangeText={this._handleTextChangeRefrence}
-                        placeholder="Input todo"
-                    />
-                    <Button bordered light
-                    //        onPress={this._handleSendButtonPressRefrence}
-                    >
-                        <Text>Add</Text>
 
-                    </Button>
-                </View>
 
-                {/* <List>
-                    {this.toDoListData.map((item, key) => {
-                        return (<ListItem key={key} >
-                            <Text>{item.textContent}</Text>
-                            <DeleteButton></DeleteButton>
-                            <CheckBox checked={this.checkBox} onPress={() => {
-                                const newstate = !this.checkBox;
-                                this.setState({
-                                    checkBox: newstate
-                                });
+            <View>
+                <_TextInput></_TextInput>
+                <Button bordered light
+                    onPress={this._handleSendButtonPressRefrence}>
 
-                            }} />
-                        </ListItem>
-                        );
-                    })}
-                </List> */}
+                    <Text>Add</Text>
 
-            </View >
+                </Button>
+
+
+
+                <DeleteButton></DeleteButton>
+
+            </View>
+
+
+
+
         );
     }
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: Constants.statusBarHeight,
-        backgroundColor: 'white',
-    },
-    formView: {
-        borderBottomWidth: 1,
-        borderColor: '#ccc',
-        paddingBottom: 8,
-    },
-    inputForm: {
-        backgroundColor: '#fff',
-        width: 320,
-        height: 40,
-        padding: 8,
-        marginBottom: 8,
-    },
-    todoItem: {
-        alignItems: 'center',
-        padding: 8,
-        width: 320,
-        borderBottomWidth: 1.5,
-        borderColor: '#e0e0e0',
-        backgroundColor: '#fff',
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//         alignItems: 'center',
+//         justifyContent: 'center',
+//         paddingTop: Constants.statusBarHeight,
+//         backgroundColor: 'white',
+//     },
+//     formView: {
+//         borderBottomWidth: 1,
+//         borderColor: '#ccc',
+//         paddingBottom: 8,
+//     },
+//     inputForm: {
+//         backgroundColor: '#fff',
+//         width: 320,
+//         height: 40,
+//         padding: 8,
+//         marginBottom: 8,
+//     },
+//     todoItem: {
+//         alignItems: 'center',
+//         padding: 8,
+//         width: 320,
+//         borderBottomWidth: 1.5,
+//         borderColor: '#e0e0e0',
+//         backgroundColor: '#fff',
 
-        flex: 1,
-        flexDirection: 'row',
-    },
-    todoText: {
-        flex: 1,
-    },
-});
+//         flex: 1,
+//         flexDirection: 'row',
+//     },
+//     todoText: {
+//         flex: 1,
+//     },
+// });
 
 
 
