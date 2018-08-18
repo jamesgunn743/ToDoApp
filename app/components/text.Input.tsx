@@ -1,77 +1,86 @@
-// import { Text } from 'react-native';
-// import { Text, } from 'native-base';
-import { Constants } from 'expo';
+import { } from 'expo';
 import { observer } from 'mobx-react';
-// import {observable} from 'mobx';
 import * as React from 'react';
-import { TextInput, StyleSheet, View } from 'react-native';
+import { TextInput, StyleSheet, } from 'react-native';
 import { observable } from 'mobx';
 
-export interface _TextInputProps {
+export interface JamesTextInputProps {
 
 }
 
-@observer export class _TextInput extends React.Component<_TextInputProps, any>{
+@observer export class JamesTextInput extends React.Component<JamesTextInputProps, any>{
 
 
     @observable _handleSendButtonPressRefrence: any;
+
     @observable inputValue: any;
 
+    @observable _handleSendButtonPress: any;
+
+    @observable toDoListData: any;
+
+
+
     constructor(props) {
-        super(props)
+        super(props);
+
+
+
+        this._handleTextChange = this._handleTextChange.bind(this);
+        this._handleSendButtonPress = this._handleSendButtonPress.bind(this);
+    }
+
+    _handleTextChange = (value) => {
+        this.inputValue = value;
 
     };
 
+    _handleSendButtonPress = () => {
+        if (!this.inputValue) {
+            return;
+        }
+        let stuffGetEdit = this.toDoListData;
+
+        let newData = {
+            textContent: this.inputValue,
+        };
+
+        stuffGetEdit.push(newData);
+
+        this.toDoListData = stuffGetEdit;
+        this.inputValue = '';
+    };
+
+
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.formView}>
-                    <TextInput
-                        style={styles.inputForm}
-                        value={this.inputValue}
-                        onChangeText={this._handleSendButtonPressRefrence}
-                        placeholder="Input todo"
-                    />
 
-                </View>
 
-            </View>
+            <TextInput
+                style={styles.inputForm}
+                value={this.inputValue}
+                onChangeText={this._handleSendButtonPressRefrence}
+                placeholder="Input todo"
+            />
+
+            //     </View>
+
+            // </View>
         );
     }
 
 }
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: Constants.statusBarHeight,
-        backgroundColor: 'white',
-    },
-    formView: {
-        borderBottomWidth: 1,
-        borderColor: '#ccc',
-        paddingBottom: 8,
-    },
+
+
+
     inputForm: {
         backgroundColor: '#fff',
-        width: 320,
+        width: 400,
         height: 40,
-        padding: 8,
-        marginBottom: 8,
-    },
-    todoItem: {
-        alignItems: 'center',
-        padding: 8,
-        width: 320,
-        borderBottomWidth: 1.5,
-        borderColor: '#e0e0e0',
-        backgroundColor: '#fff',
+        padding: 9,
+        marginTop: 20,
 
-        flex: 1,
-        flexDirection: 'row',
     },
-    todoText: {
-        flex: 1,
-    },
+
 });

@@ -1,12 +1,13 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
-import { View, Text, } from 'react-native'
+import { View, } from 'react-native'
 // import { Constants } from 'expo';
-import { Button, } from 'native-base';
+// import { Button, } from 'native-base';
 
 import { observable } from 'mobx';
 import { DeleteButton } from '../components/delete.button';
-import { _TextInput } from '../components/text.Input';
+import { JamesTextInput } from '../components/text.Input';
+import { AddButton } from '../components/add.button';
 
 
 export interface PlaygroundProps {
@@ -48,11 +49,11 @@ export interface PlaygroundProps {
         }
         let stuffGetEdit = this.toDoListData;
 
-        // let newData = {
-        //     textContent: this.inputValue,
-        // };
+        let newData = {
+            textContent: this.inputValue,
+        };
 
-        //  stuffGetEdit.push(newData);
+        stuffGetEdit.push(newData);
 
         this.toDoListData = stuffGetEdit;
         this.inputValue = '';
@@ -63,21 +64,24 @@ export interface PlaygroundProps {
     render() {
         return (
 
+            <View >
 
-            <View>
-                <_TextInput></_TextInput>
-                <Button bordered light
-                    onPress={this._handleSendButtonPressRefrence}>
-
-                    <Text>Add</Text>
-
-                </Button>
+                <JamesTextInput />
 
 
 
-                <DeleteButton></DeleteButton>
+                <AddButton />
+
+
+
+                <DeleteButton />
+
+
+
+
 
             </View>
+
 
 
 
@@ -85,42 +89,41 @@ export interface PlaygroundProps {
         );
     }
 }
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         alignItems: 'center',
-//         justifyContent: 'center',
-//         paddingTop: Constants.statusBarHeight,
-//         backgroundColor: 'white',
-//     },
-//     formView: {
-//         borderBottomWidth: 1,
-//         borderColor: '#ccc',
-//         paddingBottom: 8,
-//     },
-//     inputForm: {
-//         backgroundColor: '#fff',
-//         width: 320,
-//         height: 40,
-//         padding: 8,
-//         marginBottom: 8,
-//     },
-//     todoItem: {
-//         alignItems: 'center',
-//         padding: 8,
-//         width: 320,
-//         borderBottomWidth: 1.5,
-//         borderColor: '#e0e0e0',
-//         backgroundColor: '#fff',
+// // const styles = StyleSheet.create({
+// //     container: {
+// //         flex: 1,
+// //         alignItems: 'center',
+// //         justifyContent: 'center',
+// //         paddingTop: Constants.statusBarHeight,
+// //         backgroundColor: 'white',
+// //     },
+// //     formView: {
+// //         borderBottomWidth: 1,
+// //         borderColor: '#ccc',
+// //         paddingBottom: 8,
+// //     },
+// //     inputForm: {
+// //         backgroundColor: '#fff',
+// //         width: 320,
+// //         height: 40,
+// //         padding: 8,
+// //         marginBottom: 8,
+// //     },
+// //     todoItem: {
+// //         alignItems: 'center',
+// //         padding: 8,
+// //         width: 320,
+// //         borderBottomWidth: 1.5,
+// //         borderColor: '#e0e0e0',
+// //         backgroundColor: '#fff',
 
-//         flex: 1,
-//         flexDirection: 'row',
-//     },
-//     todoText: {
-//         flex: 1,
-//     },
-// });
-
+// //         flex: 1,
+// //         flexDirection: 'row',
+// //     },
+// //     todoText: {
+// //         flex: 1,
+// //     },
+// // });
 
 
 
